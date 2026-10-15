@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fc">
+  <meta name="description" content="Contoh sistem kasir online untuk membantu UMKM mengelola penjualan, stok, dan laporan dalam satu tempat.">
+  <title>KasirPro — Kasir Online untuk Bisnis yang Terus Tumbuh</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { primary: { 50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81' }, accent: { 400:'#2dd4bf',500:'#14b8a6',600:'#0d9488' } },
+      fontFamily: { sans: ['Inter','system-ui','sans-serif'] }
+    } } };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+  <nav class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-lg">
+    <div class="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-4 sm:px-6">
+      <a href="#beranda" class="flex items-center gap-2.5 text-xl font-extrabold tracking-tight text-slate-900">
+        <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-600 text-white shadow-lg shadow-primary-600/25">▤</span>
+        KasirPro<span class="text-primary-600">.</span>
+      </a>
+      <div class="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex">
+        <a class="hover:text-primary-600" href="#fitur">Fitur</a><a class="hover:text-primary-600" href="#cara-kerja">Cara Kerja</a><a class="hover:text-primary-600" href="#bisnis">Untuk Bisnis</a><a class="hover:text-primary-600" href="#harga">Harga</a>
+        <a class="rounded-xl bg-primary-600 px-5 py-2.5 font-semibold text-white shadow-md shadow-primary-600/20 hover:bg-primary-700" href="#demo">Coba Demo</a>
+      </div>
+      <button id="menu-btn" class="rounded-lg px-3 py-2 text-slate-700 md:hidden" aria-label="Buka menu">☰</button>
+    </div>
+    <div id="mobile-menu" class="hidden space-y-1 border-t border-slate-200 bg-white px-4 py-3 md:hidden">
+      <a class="block rounded-lg px-3 py-2" href="#fitur">Fitur</a><a class="block rounded-lg px-3 py-2" href="#cara-kerja">Cara Kerja</a><a class="block rounded-lg px-3 py-2" href="#bisnis">Untuk Bisnis</a><a class="block rounded-lg px-3 py-2" href="#harga">Harga</a><a class="mt-2 block rounded-xl bg-primary-600 px-3 py-3 text-center font-semibold text-white" href="#demo">Coba Demo</a>
+    </div>
+  </nav>
+
+  <main id="beranda">
+    <section class="hero-wash relative overflow-hidden">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 md:py-24 lg:grid-cols-[1fr_1.05fr]">
+        <div class="relative z-10">
+          <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-100 bg-white/80 px-4 py-2 text-sm font-semibold text-primary-700"><span class="h-2 w-2 rounded-full bg-teal-500"></span> Sistem kasir online untuk UMKM</div>
+          <h1 class="mb-6 max-w-xl text-4xl font-extrabold leading-[1.12] tracking-[-.045em] text-slate-950 sm:text-5xl lg:text-[3.6rem]">Jualan lebih mudah.<br><span class="text-primary-600">Bisnis makin terukur.</span></h1>
+          <p class="mb-8 max-w-lg text-lg leading-relaxed text-slate-600">Catat transaksi, pantau stok, dan pahami penjualan harian dari satu dashboard. KasirPro membantu Anda fokus melayani pelanggan dan mengembangkan usaha.</p>
+          <div class="mb-8 flex flex-wrap gap-3"><a href="#demo" class="rounded-xl bg-primary-600 px-6 py-3.5 font-semibold text-white shadow-lg shadow-primary-600/25 transition hover:-translate-y-0.5 hover:bg-primary-700">Lihat Demo Kasir <span aria-hidden="true">→</span></a><a href="#fitur" class="rounded-xl border border-slate-200 bg-white px-6 py-3.5 font-semibold text-slate-700 transition hover:border-primary-200 hover:text-primary-700">Jelajahi Fitur</a></div>
+          <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-500"><span>✓ Mudah digunakan</span><span>✓ Bisa dari HP atau laptop</span><span>✓ Data tersusun rapi</span></div>
+        </div>
+
+        <div class="dashboard-card relative rounded-[1.6rem] border border-white bg-white p-4 shadow-2xl shadow-indigo-900/10 sm:p-6">
+          <div class="mb-5 flex items-center justify-between"><div class="flex items-center gap-3"><div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-50 text-primary-600">▤</div><div><p class="font-bold text-slate-900">Ringkasan Penjualan</p><p class="text-xs text-slate-500">Toko Sehari-hari · Hari ini</p></div></div><span class="rounded-lg bg-emerald-50 px-2.5 py-1.5 text-xs font-semibold text-emerald-700">● Toko buka</span></div>
+          <div class="grid grid-cols-2 gap-3"><div class="rounded-2xl bg-slate-50 p-4"><p class="text-xs font-medium text-slate-500">Omzet hari ini</p><p class="mt-2 text-2xl font-extrabold tracking-tight text-slate-900">Rp 2.845.000</p><p class="mt-1 text-xs font-semibold text-emerald-600">↗ 12,8% dari kemarin</p></div><div class="rounded-2xl bg-primary-50/70 p-4"><p class="text-xs font-medium text-slate-500">Transaksi</p><p class="mt-2 text-2xl font-extrabold tracking-tight text-slate-900">38</p><p class="mt-1 text-xs text-slate-500">Rata-rata Rp 74.868</p></div></div>
+          <div class="my-4 rounded-2xl border border-slate-100 p-4"><div class="mb-4 flex items-center justify-between"><p class="text-sm font-bold text-slate-800">Penjualan minggu ini</p><span class="text-xs text-slate-400">7 hari terakhir</span></div><div class="flex h-28 items-end gap-2 sm:gap-3"><div class="bar h-[42%]"></div><div class="bar h-[58%]"></div><div class="bar h-[48%]"></div><div class="bar h-[74%]"></div><div class="bar h-[63%]"></div><div class="bar h-[90%] active"></div><div class="bar h-[68%]"></div></div><div class="mt-2 flex justify-between text-[10px] font-medium text-slate-400"><span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span><span>Min</span></div></div>
+          <div class="space-y-2"><div class="flex items-center justify-between"><p class="text-sm font-bold text-slate-800">Transaksi terbaru</p><a href="#demo" class="text-xs font-semibold text-primary-600">Lihat demo</a></div><div class="flex items-center gap-3 rounded-xl bg-slate-50 px-3 py-2.5"><span class="flex h-9 w-9 items-center justify-center rounded-full bg-amber-100 text-sm">☕</span><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold">Kopi Susu · 2 item</p><p class="text-xs text-slate-500">09:42 · QRIS</p></div><b class="text-sm">Rp 42.000</b></div><div class="flex items-center gap-3 rounded-xl bg-slate-50 px-3 py-2.5"><span class="flex h-9 w-9 items-center justify-center rounded-full bg-teal-100 text-sm">🥐</span><div class="min-w-0 flex-1"><p class="truncate text-sm font-semibold">Roti Cokelat · 3 item</p><p class="text-xs text-slate-500">09:36 · Tunai</p></div><b class="text-sm">Rp 36.000</b></div></div>
+        </div>
+      </div>
+      <div class="pointer-events-none absolute -right-24 top-10 h-72 w-72 rounded-full bg-indigo-200/35 blur-3xl"></div><div class="pointer-events-none absolute -left-24 bottom-0 h-64 w-64 rounded-full bg-teal-100/70 blur-3xl"></div>
+    </section>
+
+    <section class="border-y border-slate-100 bg-white py-9"><div class="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-12 gap-y-5 px-4 text-sm font-semibold text-slate-500 sm:px-6"><span class="text-slate-400">Satu sistem untuk operasional harian</span><span>▦ Penjualan</span><span>▤ Persediaan</span><span>◷ Shift kasir</span><span>▥ Laporan</span></div></section>
+
+    <section id="fitur" class="py-20 md:py-24"><div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="mx-auto mb-12 max-w-2xl text-center"><span class="eyebrow">FITUR UTAMA</span><h2 class="section-title">Semua kebutuhan toko, <span class="text-primary-600">dalam satu tempat</span></h2><p class="mt-4 leading-relaxed text-slate-600">Dari transaksi pertama sampai evaluasi akhir hari, pekerjaan jadi lebih ringkas dan mudah dipantau.</p></div>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="feature-card"><div class="feature-icon bg-primary-50 text-primary-600">▤</div><h3>Kasir cepat dan praktis</h3><p>Temukan produk, masukkan ke keranjang, lalu selesaikan transaksi dengan beberapa langkah saja.</p></article>
+        <article class="feature-card"><div class="feature-icon bg-teal-50 text-teal-600">▦</div><h3>Stok selalu terpantau</h3><p>Stok berkurang otomatis setelah transaksi. Ketahui produk yang perlu segera diisi ulang.</p></article>
+        <article class="feature-card"><div class="feature-icon bg-amber-50 text-amber-600">▥</div><h3>Laporan mudah dibaca</h3><p>Lihat omzet, jumlah transaksi, dan produk terlaris untuk membantu mengambil keputusan.</p></article>
+        <article class="feature-card"><div class="feature-icon bg-violet-50 text-violet-600">◷</div><h3>Kelola shift kasir</h3><p>Catat pergantian shift dan pantau transaksi setiap kasir dengan lebih tertib.</p></article>
+        <article class="feature-card"><div class="feature-icon bg-rose-50 text-rose-600">♙</div><h3>Data pelanggan</h3><p>Simpan riwayat pembelian pelanggan dan berikan layanan yang terasa lebih personal.</p></article>
+        <article class="feature-card"><div class="feature-icon bg-cyan-50 text-cyan-600">⌁</div><h3>Fleksibel di berbagai perangkat</h3><p>Gunakan di laptop, tablet, atau ponsel sesuai kebutuhan operasional toko Anda.</p></article>
+      </div>
+    </div></section>
+
+    <section id="cara-kerja" class="bg-white py-20 md:py-24"><div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="mx-auto mb-12 max-w-2xl text-center"><span class="eyebrow">CARA KERJA</span><h2 class="section-title">Mulai jualan dengan alur yang sederhana</h2><p class="mt-4 text-slate-600">Kasir dan pemilik toko bisa langsung memahami pekerjaan hariannya.</p></div>
+      <div class="grid gap-8 md:grid-cols-3"><article class="step-card"><span>01</span><h3>Masukkan produk</h3><p>Atur nama, harga, kategori, dan jumlah stok produk Anda.</p></article><article class="step-card"><span>02</span><h3>Catat transaksi</h3><p>Pilih barang yang dibeli, tentukan metode pembayaran, lalu selesaikan transaksi.</p></article><article class="step-card"><span>03</span><h3>Pantau hasilnya</h3><p>Periksa ringkasan penjualan dan kondisi stok kapan pun dibutuhkan.</p></article></div>
+    </div></section>
+
+    <section id="bisnis" class="py-20 md:py-24"><div class="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
+      <div><span class="eyebrow">UNTUK BERBAGAI USAHA</span><h2 class="section-title">Dirancang untuk ritme bisnis sehari-hari</h2><p class="mt-4 leading-relaxed text-slate-600">Mulai dari satu meja kasir sampai beberapa titik penjualan, proses transaksi dan pencatatan bisa disesuaikan dengan kebutuhan usaha.</p><div class="mt-7 grid grid-cols-2 gap-3"><div class="business-tag">☕ Kafe & kedai</div><div class="business-tag">🛒 Toko kelontong</div><div class="business-tag">🍽️ Warung makan</div><div class="business-tag">👕 Fashion & retail</div><div class="business-tag">💄 Toko kecantikan</div><div class="business-tag">📦 Usaha rumahan</div></div></div>
+      <div class="rounded-[1.75rem] bg-slate-900 p-6 text-white shadow-xl shadow-slate-900/10 sm:p-8"><div class="flex items-center justify-between"><div><p class="text-sm text-slate-400">Ringkasan yang jelas</p><p class="mt-1 text-xl font-bold">Toko Anda, lebih terkendali</p></div><span class="rounded-xl bg-white/10 px-3 py-2 text-sm">Hari ini</span></div><div class="mt-7 space-y-4"><div><div class="mb-2 flex justify-between text-sm"><span class="text-slate-300">Produk dengan stok aman</span><b>86%</b></div><div class="h-2 rounded-full bg-white/10"><div class="h-2 w-[86%] rounded-full bg-teal-400"></div></div></div><div><div class="mb-2 flex justify-between text-sm"><span class="text-slate-300">Target penjualan harian</span><b>72%</b></div><div class="h-2 rounded-full bg-white/10"><div class="h-2 w-[72%] rounded-full bg-indigo-400"></div></div></div><div class="grid grid-cols-2 gap-3 pt-2"><div class="rounded-2xl bg-white/5 p-4"><p class="text-xs text-slate-400">Produk terlaris</p><p class="mt-2 font-semibold">Es Kopi Gula Aren</p><p class="mt-1 text-sm text-teal-300">24 terjual</p></div><div class="rounded-2xl bg-white/5 p-4"><p class="text-xs text-slate-400">Perlu restok</p><p class="mt-2 font-semibold">3 produk</p><p class="mt-1 text-sm text-amber-300">Cek persediaan →</p></div></div></div></div>
+    </div></section>
+
+    <section id="demo" class="bg-slate-950 py-20 text-white md:py-24"><div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="mx-auto mb-10 max-w-2xl text-center"><span class="eyebrow text-teal-300">DEMO INTERAKTIF</span><h2 class="section-title text-white">Coba alur transaksi kasir</h2><p class="mt-4 text-slate-400">Tambahkan produk ke keranjang dan lihat total belanja berubah.</p></div>
+      <div class="mx-auto grid max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-slate-900 lg:grid-cols-[1.15fr_.85fr]">
+        <div class="p-5 sm:p-7"><div class="mb-5 flex flex-wrap items-center justify-between gap-3"><div><p class="font-bold">Toko Sehari-hari</p><p class="text-xs text-slate-400">Kasir demo · <span id="demo-time"></span></p></div><span class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-300">● Shift aktif</span></div><div class="mb-4 flex gap-2"><input id="product-search" class="min-w-0 flex-1 rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-sm text-white placeholder:text-slate-500" type="search" placeholder="Cari produk..." aria-label="Cari produk"><select id="category-filter" class="rounded-xl border border-white/10 bg-slate-950 px-3 text-sm text-slate-300" aria-label="Filter kategori"><option value="all">Semua</option><option value="makanan">Makanan</option><option value="minuman">Minuman</option><option value="snack">Snack</option></select></div><div id="product-grid" class="grid grid-cols-2 gap-3 sm:grid-cols-3"></div></div>
+        <aside class="flex flex-col border-t border-white/10 bg-slate-900/70 p-5 sm:p-7 lg:border-l lg:border-t-0"><div class="mb-4 flex items-center justify-between"><h3 class="font-bold">Keranjang</h3><button id="clear-cart" class="text-xs text-slate-400 hover:text-white">Kosongkan</button></div><div id="cart-items" class="min-h-32 flex-1 space-y-2"></div><div class="mt-5 space-y-3 border-t border-white/10 pt-4"><div class="flex justify-between text-sm text-slate-400"><span>Jumlah item</span><span id="cart-count">0</span></div><div class="flex justify-between text-lg font-bold"><span>Total</span><span id="cart-total" class="text-teal-300">Rp 0</span></div><button id="checkout-btn" class="w-full rounded-xl bg-primary-600 py-3.5 font-semibold text-white transition hover:bg-primary-500 disabled:cursor-not-allowed disabled:opacity-40" disabled>Bayar sekarang</button><p id="checkout-message" class="min-h-5 text-center text-xs text-teal-300" aria-live="polite"></p></div></aside>
+      </div>
+      <p class="mt-4 text-center text-xs text-slate-500">Simulasi ini hanya contoh tampilan. Transaksi tidak diproses dan tidak ada pembayaran sungguhan.</p>
+    </div></section>
+
+    <section id="harga" class="bg-white py-20 md:py-24"><div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="mx-auto mb-12 max-w-2xl text-center"><span class="eyebrow">PILIH PAKET</span><h2 class="section-title">Mulai dari kebutuhan bisnis Anda</h2><p class="mt-4 text-slate-600">Contoh paket untuk menggambarkan pilihan layanan yang bisa disesuaikan.</p></div>
+      <div class="mx-auto grid max-w-5xl gap-5 md:grid-cols-3"><article class="price-card"><p class="font-bold text-slate-500">Basic</p><p class="price">Rp 1,5<span>jt</span></p><p class="text-sm text-slate-500">untuk usaha yang baru mulai</p><ul><li>✓ Kasir dan transaksi</li><li>✓ Kelola produk</li><li>✓ Ringkasan penjualan</li></ul><a href="#kontak" class="price-link">Pilih Basic</a></article><article class="price-card featured"><span class="popular">PILIHAN POPULER</span><p class="font-bold text-primary-600">Standard</p><p class="price">Rp 2,5<span>jt</span></p><p class="text-sm text-slate-500">untuk toko yang berkembang</p><ul><li>✓ Semua fitur Basic</li><li>✓ Pantau stok dan shift</li><li>✓ Laporan lebih lengkap</li></ul><a href="#kontak" class="price-link primary-link">Pilih Standard</a></article><article class="price-card"><p class="font-bold text-slate-500">Premium</p><p class="price">Rp 4<span>jt</span></p><p class="text-sm text-slate-500">untuk operasional lebih luas</p><ul><li>✓ Semua fitur Standard</li><li>✓ Multi cabang</li><li>✓ Fitur custom sesuai kebutuhan bisnis</li><li>✓ Integrasi program member dan poin loyalitas</li></ul><a href="#kontak" class="price-link">Pilih Premium</a></article></div><p class="mt-6 text-center text-xs text-slate-400">Harga di atas hanya contoh dan dapat disesuaikan.</p>
+    </div></section>
+
+    <section id="kontak" class="contact-wash px-4 py-20 text-center sm:px-6"><div class="mx-auto max-w-3xl"><span class="eyebrow">KASIRPRO UNTUK USAHA ANDA</span><h2 class="section-title">Punya cara kerja yang ingin dibuat lebih praktis?</h2><p class="mx-auto mt-4 max-w-xl text-slate-600">Ceritakan kebutuhan bisnis Anda dan temukan alur kasir yang paling sesuai.</p><a href="mailto:halo@kasirpro.id?subject=Konsultasi%20KasirPro" class="mt-7 inline-flex items-center gap-2 rounded-xl bg-primary-600 px-7 py-3.5 font-semibold text-white shadow-lg shadow-primary-600/20 hover:bg-primary-700">Hubungi Kami <span aria-hidden="true">→</span></a><p class="mt-5 text-xs text-slate-500">Ini adalah contoh/portfolio tampilan sistem kasir.</p></div></section>
+  </main>
+  <footer class="border-t border-slate-200 bg-white py-6"><div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 text-sm text-slate-500 sm:flex-row sm:px-6"><a href="#beranda" class="font-bold text-slate-800">KasirPro<span class="text-primary-600">.</span></a><p>© 2026 KasirPro · Contoh sistem kasir untuk UMKM</p></div></footer>
+  <script>
+    const products = [
+      {id:1,name:'Kopi Susu',category:'minuman',price:18000,icon:'☕'}, {id:2,name:'Es Teh',category:'minuman',price:8000,icon:'🧋'},
+      {id:3,name:'Roti Cokelat',category:'makanan',price:12000,icon:'🥐'}, {id:4,name:'Nasi Ayam',category:'makanan',price:25000,icon:'🍛'},
+      {id:5,name:'Keripik Kentang',category:'snack',price:10000,icon:'🥔'}, {id:6,name:'Air Mineral',category:'minuman',price:5000,icon:'💧'}
+    ];
+    const cart = new Map();
+    const rupiah = n => 'Rp ' + n.toLocaleString('id-ID');
+    const grid = document.getElementById('product-grid');
+    function renderProducts() {
+      const query = document.getElementById('product-search').value.trim().toLowerCase();
+      const category = document.getElementById('category-filter').value;
+      const visible = products.filter(p => p.name.toLowerCase().includes(query) && (category === 'all' || p.category === category));
+      grid.innerHTML = visible.length ? visible.map(p => `<button class="product-tile" data-id="${p.id}"><span class="text-2xl">${p.icon}</span><span class="mt-2 block truncate text-sm font-semibold text-white">${p.name}</span><span class="mt-1 block text-sm font-semibold text-teal-300">${rupiah(p.price)}</span></button>`).join('') : '<p class="col-span-full py-8 text-center text-sm text-slate-400">Produk tidak ditemukan.</p>';
+    }
+    function renderCart() {
+      const entries = [...cart.values()];
+      const count = entries.reduce((sum, item) => sum + item.qty, 0);
+      const total = entries.reduce((sum, item) => sum + item.price * item.qty, 0);
+      document.getElementById('cart-count').textContent = count;
+      document.getElementById('cart-total').textContent = rupiah(total);
+      document.getElementById('checkout-btn').disabled = !count;
+      document.getElementById('cart-items').innerHTML = entries.length ? entries.map(item => `<div class="cart-row"><div class="min-w-0 flex-1"><p class="truncate text-sm font-medium">${item.name}</p><p class="text-xs text-slate-400">${rupiah(item.price)} · ${item.qty} item</p></div><div class="flex items-center gap-2"><button class="qty-btn" data-action="minus" data-id="${item.id}" aria-label="Kurangi ${item.name}">−</button><span class="w-4 text-center text-sm">${item.qty}</span><button class="qty-btn" data-action="plus" data-id="${item.id}" aria-label="Tambah ${item.name}">+</button></div></div>`).join('') : '<p class="py-8 text-center text-sm text-slate-500">Keranjang masih kosong. Pilih produk untuk memulai.</p>';
+    }
+    grid.addEventListener('click', event => { const button = event.target.closest('[data-id]'); if (!button) return; const product = products.find(p => p.id === Number(button.dataset.id)); const existing = cart.get(product.id); cart.set(product.id, {...product, qty:(existing?.qty || 0) + 1}); document.getElementById('checkout-message').textContent = ''; renderCart(); });
+    document.getElementById('cart-items').addEventListener('click', event => { const button = event.target.closest('[data-action]'); if (!button) return; const id = Number(button.dataset.id); const item = cart.get(id); item.qty += button.dataset.action === 'plus' ? 1 : -1; if (item.qty <= 0) cart.delete(id); renderCart(); });
+    document.getElementById('product-search').addEventListener('input', renderProducts);
+    document.getElementById('category-filter').addEventListener('change', renderProducts);
+    document.getElementById('clear-cart').addEventListener('click', () => { cart.clear(); document.getElementById('checkout-message').textContent = ''; renderCart(); });
+    document.getElementById('checkout-btn').addEventListener('click', () => { if (!cart.size) return; cart.clear(); renderCart(); document.getElementById('checkout-message').textContent = 'Transaksi demo berhasil diselesaikan.'; });
+    document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.toggle('hidden'));
+    document.querySelectorAll('#mobile-menu a').forEach(link => link.addEventListener('click', () => document.getElementById('mobile-menu').classList.add('hidden')));
+    document.getElementById('demo-time').textContent = new Date().toLocaleTimeString('id-ID', {hour:'2-digit',minute:'2-digit'});
+    renderProducts(); renderCart();
+  </script>
+</body>
+</html>
